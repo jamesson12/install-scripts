@@ -5,6 +5,8 @@
 # Any failed command will just be skiped, error message may pop up but won't crash the install process
 # Net-install creates the file /tmp/run_once in live environment (need to be transfered to installed system) so it can be used to detect install option
 
+userdel -r liveuser
+
 if [ -f /tmp/new_username.txt ]
 then
     NEW_USER=$(cat /tmp/new_username.txt)
@@ -351,6 +353,9 @@ _endeavouros
 _vbox
 _vmware
 _de_wm_config
+systemctl -f enable lightdm-plymouth.service
+plymouth-set-default-theme -R arch-charge
+pacman -R xfce4-screensaver --noconfirm
 _clean_up
 
 rm -rf /usr/bin/{calamares_switcher,cleaner_script.sh,chrooted_cleaner_script.sh,calamares_for_testers}
