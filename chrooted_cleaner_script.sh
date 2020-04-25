@@ -131,7 +131,13 @@ _clean_archiso(){
 }
 
 _clean_offline_packages(){
-
+ local _packages_to_remove=( 
+        epiphany
+)
+    local xx
+    # @ does one by one to avoid errors in the entire process
+    # * can be used to treat all packages in one command
+    for xx in ${_packages_to_remove[@]}; do pacman -Rnscv $xx --noconfirm; done
 }
 
 _endeavouros(){
