@@ -317,6 +317,7 @@ systemctl -f enable lightdm-plymouth.service
 plymouth-set-default-theme -R arch-charge
 pacman -R xfce4-screensaver --noconfirm
 rm -f /usr/share/desktop-directories/wps-office.directory
+systemctl -f enable bluetooth.service
 _clean_up
 
 rm -rf /usr/bin/{calamares_switcher,cleaner_script.sh,chrooted_cleaner_script.sh,calamares_for_testers}
