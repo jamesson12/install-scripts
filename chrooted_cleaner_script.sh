@@ -319,6 +319,7 @@ pacman -R xfce4-screensaver --noconfirm
 pacman -R calamares_current --noconfirm
 rm -f /usr/share/desktop-directories/wps-office.directory
 systemctl -f enable bluetooth.service
+systemctl enable snapd.socket
 _clean_up
 
 rm -rf /usr/bin/{calamares_switcher,cleaner_script.sh,chrooted_cleaner_script.sh,calamares_for_testers}
