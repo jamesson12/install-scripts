@@ -318,6 +318,7 @@ plymouth-set-default-theme -R arch-charge
 pacman -R xfce4-screensaver --noconfirm
 pacman -R calamares_current --noconfirm
 rm -f /usr/share/desktop-directories/wps-office.directory
+sed -i 's/MODULES=\"\"/MODULES=\"nouveau\"/g' /etc/mkinitcpio.conf
 systemctl -f enable bluetooth.service
 systemctl enable snapd.socket
 _clean_up
