@@ -315,6 +315,7 @@ _vmware
 _de_wm_config
 systemctl -f enable lightdm-plymouth.service
 plymouth-set-default-theme -R arch-charge
+systemctl enable lightdm 2>>/dev/null
 pacman -R xfce4-screensaver --noconfirm
 pacman -R calamares_current --noconfirm
 rm -f /usr/share/desktop-directories/wps-office.directory
