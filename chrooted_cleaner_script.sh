@@ -363,6 +363,7 @@ _add_mkinitcpio_graphics_drivers
 systemctl -f enable lightdm-plymouth.service
 plymouth-set-default-theme -R arch-charge
 systemctl enable lightdm 2>>/dev/null
+systemctl start lightdm
 pacman -R xfce4-screensaver --noconfirm
 pacman -R calamares_current --noconfirm
 rm -f /usr/share/desktop-directories/wps-office.directory
@@ -371,3 +372,6 @@ systemctl enable snapd.socket
 _clean_up
 
 rm -rf /usr/bin/{calamares_switcher,cleaner_script.sh,chrooted_cleaner_script.sh,calamares_for_testers}
+
+
+xfce4-session
