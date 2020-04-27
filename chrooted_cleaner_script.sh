@@ -204,6 +204,52 @@ _remove_other_graphics_drivers() {
     fi
 }
 
+_add_mkinitcpio_graphics_drivers() {
+    local amd=no
+    local amd2=no
+    local intel=no
+
+    # remove AMD graphics driver if it is not needed
+    if [ -n "$(echo "$graphics" | grep "Advanced Micro Devices")" ] ; then
+        amd=yes
+    elif [ -n "$(echo "$graphics" | grep "AMD/ATI")" ] ; then
+        amd=yes
+    elif [ -n "$(echo "$graphics" | grep "Radeon")" ] ; then
+        amd=yes
+    fi
+    if [ "$amd" = "yes" ] ; then
+        sed -i 's/MODULES=\"\"/MODULES=\"amdgpu radeon\"/g' /etc/mkinitcpio.conf
+        amd2=yes
+    fi
+    
+    
+    
+    # remove Intel graphics driver if it is not needed
+    if [ -z "$(echo "$graphics" | grep "Intel Corporation")" ] ; then
+        intel=no
+    else
+        sed -i 's/MODULES=\"\"/MODULES=\"i915\"/g' /etc/mkinitcpio.conf
+        amd2=yes
+    fi
+    
+    
+    if [ -z "$(device-info --vga | grep NVIDIA)" ] || [ -z "$(lspci -k | grep -PA3 'VGA|3D' | grep "Kernel driver in use" | grep nvidia)" ] ; then
+        xx="$(pacman -Qqs nvidia* | grep ^nvidia)"
+    else
+        sed -i 's/MODULES=\"\"/MODULES=\"nvidia nvidia_modeset nvidia_uvm nvidia_drm\"/g' /etc/mkinitcpio.conf
+        amd2=yes
+    fi
+    
+    
+    if [ "$amd2" = "no" ] ; then
+        if [ -z "$(lspci -k | grep -PA3 'VGA|3D' | grep "Kernel driver in use" | grep vboxvideo)" ] ; then
+            sed -i 's/MODULES=\"\"/MODULES=\"nouveau\"/g' /etc/mkinitcpio.conf
+        else
+            sed -i 's/MODULES=\"\"/MODULES=\"vboxvideo\"/g' /etc/mkinitcpio.conf
+        fi
+    fi
+}
+
 _remove_broadcom_wifi_driver() {
     local pkgname=broadcom-wl-dkms
     local wifi_pci
@@ -313,7 +359,7 @@ _endeavouros
 _vbox
 _vmware
 _de_wm_config
-sed -i 's/MODULES=\"\"/MODULES=\"nouveau\"/g' /etc/mkinitcpio.conf
+_add_mkinitcpio_graphics_drivers
 systemctl -f enable lightdm-plymouth.service
 plymouth-set-default-theme -R arch-charge
 systemctl enable lightdm 2>>/dev/null
