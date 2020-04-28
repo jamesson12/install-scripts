@@ -373,7 +373,7 @@ _clean_up
 
 rm -rf /usr/bin/{calamares_switcher,cleaner_script.sh,chrooted_cleaner_script.sh,calamares_for_testers}
 
-xinit
+#xinit
 #xfce4-session
 
 XDG_MENU_PREFIX="xfce-"
