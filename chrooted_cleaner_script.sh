@@ -373,5 +373,5 @@ _clean_up
 
 rm -rf /usr/bin/{calamares_switcher,cleaner_script.sh,chrooted_cleaner_script.sh,calamares_for_testers}
 
-
+xinit
 #xfce4-session
