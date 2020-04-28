@@ -389,3 +389,53 @@ export XDG_SESSION_TYPE='X11'
 
 #dbus-launch dconf load / < /etc/skel/dconf/plank.dconf
 #sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < plank.dconf'
+
+export SHELL=/bin/bash
+#COLORTERM=truecolor
+export XDG_CONFIG_DIRS=/etc/skel/.config/xfce4:/etc/xdg
+export XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
+export XDG_MENU_PREFIX=xfce-
+#LC_ADDRESS=de_AT.UTF-8
+#LC_NAME=de_AT.UTF-8
+#SSH_AUTH_SOCK=/tmp/ssh-yBEgovH4JnXX/agent.885
+export DESKTOP_SESSION=xfce
+#LC_MONETARY=de_AT.UTF-8
+export SSH_AGENT_PID=886
+export NO_AT_BRIDGE=1
+#GTK_MODULES=canberra-gtk-module:canberra-gtk-module
+export XDG_SEAT=seat0
+#PWD=/home/a
+#LOGNAME=a
+export XDG_SESSION_DESKTOP=xfce
+#QT_QPA_PLATFORMTHEME=qt5ct
+export XDG_SESSION_TYPE=x11
+export PANEL_GDK_CORE_DEVICE_EVENTS=0
+export XAUTHORITY=/home/$NEW_USER/.Xauthority
+export XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/$NEW_USER
+export HOME=/home/$NEW_USER
+export LC_PAPER=de_AT.UTF-8
+#LANG=de_AT.UTF-8
+export XDG_CURRENT_DESKTOP=XFCE
+#VTE_VERSION=6002
+export XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+export XDG_SESSION_CLASS=user
+export IBUS_DISABLE_SNOOPER=1
+#TERM=xterm-256color
+#LC_IDENTIFICATION=de_AT.UTF-8
+export USER=$NEW_USER
+#DISPLAY=:0.0
+export SHLVL=1
+#LC_TELEPHONE=de_AT.UTF-8
+#LC_MEASUREMENT=de_AT.UTF-8
+export XDG_VTNR=7
+export XDG_SESSION_ID=2
+#MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins
+export XDG_RUNTIME_DIR=/run/user/1001
+#LC_TIME=de_AT.UTF-8
+export XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop:/usr/share
+#BROWSER=firefox
+#PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
+export GDMSESSION=xfce
+#DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus
+#MAIL=/var/spool/mail/a
+#LC_NUMERIC=de_AT.UTF-8
