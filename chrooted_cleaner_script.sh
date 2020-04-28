@@ -375,3 +375,14 @@ rm -rf /usr/bin/{calamares_switcher,cleaner_script.sh,chrooted_cleaner_script.sh
 
 xinit
 #xfce4-session
+
+XDG_MENU_PREFIX="xfce-"
+export XDG_MENU_PREFIX
+
+DESKTOP_SESSION="xfce"
+export DESKTOP_SESSION
+
+XDG_CURRENT_DESKTOP="XFCE"
+export XDG_CURRENT_DESKTOP
+
+export XDG_SESSION_TYPE='X11' 
