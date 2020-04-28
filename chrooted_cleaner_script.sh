@@ -386,3 +386,6 @@ XDG_CURRENT_DESKTOP="XFCE"
 export XDG_CURRENT_DESKTOP
 
 export XDG_SESSION_TYPE='X11' 
+
+#dbus-launch dconf load / < /home/$NEW_USER/plank.dconf
+#sudo -H -u liveuser bash -c 'dbus-launch dconf load / < plank.dconf'
