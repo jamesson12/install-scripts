@@ -391,6 +391,9 @@ rm -rf /usr/bin/{calamares_switcher,cleaner_script.sh,chrooted_cleaner_script.sh
 dbus-launch dconf load / < /etc/skel/.dconf/plank.dconf
 sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < /etc/skel/.dconf/plank.dconf'
 
+systemctl enable --now snapd.socket
+ln -s /var/lib/snapd/snap /snap
+
 #export SHELL=/bin/bash
 #COLORTERM=truecolor
 #export XDG_CONFIG_DIRS=/etc/skel/.config/xfce4:/etc/xdg
