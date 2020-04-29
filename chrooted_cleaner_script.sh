@@ -387,8 +387,8 @@ rm -rf /usr/bin/{calamares_switcher,cleaner_script.sh,chrooted_cleaner_script.sh
 
 #export XDG_SESSION_TYPE='X11' 
 
-dbus-launch dconf load / < /etc/skel/dconf/plank.dconf
-sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < /etc/skel/dconf/plank.dconf'
+dbus-launch dconf load / < /etc/skel/.dconf/plank.dconf
+sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < /etc/skel/.dconf/plank.dconf'
 
 #export SHELL=/bin/bash
 #COLORTERM=truecolor
