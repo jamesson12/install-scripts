@@ -394,6 +394,10 @@ sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < /etc/skel/.dconf/plank.
 systemctl enable --now snapd.socket
 ln -s /var/lib/snapd/snap /snap
 
+cp /usr/share/libertyos/unicode.pf2 /boot/grub/fonts/
+
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
 #export SHELL=/bin/bash
 #COLORTERM=truecolor
 #export XDG_CONFIG_DIRS=/etc/skel/.config/xfce4:/etc/xdg
