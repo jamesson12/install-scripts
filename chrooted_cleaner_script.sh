@@ -394,7 +394,7 @@ sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < /etc/skel/.dconf/plank.
 systemctl enable --now snapd.socket
 ln -s /var/lib/snapd/snap /snap
 
-cp /usr/share/libertyos/unicode.pf2 /boot/grub/fonts/
+cp /usr/share/libertyos/unicode.pf2 /boot/grub/fonts/unicode.pf2
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
