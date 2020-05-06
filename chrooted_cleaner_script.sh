@@ -392,7 +392,7 @@ sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < /etc/skel/.dconf/plank.
 
 systemctl enable --now snapd.seeded.service
 systemctl enable --now snapd.socket
-systemctl daemon-reexec
+systemctl daemon-reload
 ln -s /var/lib/snapd/snap /snap
 
 snap ack /usr/share/snap-packages/snap-store/core18_1754.assert
