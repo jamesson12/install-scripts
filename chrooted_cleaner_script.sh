@@ -391,8 +391,9 @@ rm -rf /usr/bin/{calamares_switcher,cleaner_script.sh,chrooted_cleaner_script.sh
 dbus-launch dconf load / < /etc/skel/.dconf/plank.dconf
 sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < /etc/skel/.dconf/plank.dconf'
 
-systemctl enable snapd.seeded.service
+systemctl enable --now snapd.seeded.service
 systemctl enable --now snapd.socket
+systemctl daemon-reexec
 ln -s /var/lib/snapd/snap /snap
 
 snap ack /usr/share/snap-packages/snap-store/core18_1754.assert
