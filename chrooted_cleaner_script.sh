@@ -392,25 +392,25 @@ sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < /etc/skel/.dconf/plank.
 
 systemctl enable --now snapd.seeded.service
 systemctl enable --now snapd.socket
-systemctl daemon-reload
+#systemctl daemon-reload
 ln -s /var/lib/snapd/snap /snap
 
-snap ack /usr/share/snap-packages/snap-store/core18_1754.assert
-snap install /usr/share/snap-packages/snap-store/core18_1754.snap
+#snap ack /usr/share/snap-packages/snap-store/core18_1754.assert
+#snap install /usr/share/snap-packages/snap-store/core18_1754.snap
 
-snap ack /usr/share/snap-packages/snap-store/gnome-3-28-1804_116.assert
-snap install /usr/share/snap-packages/snap-store/gnome-3-28-1804_116.snap
+#snap ack /usr/share/snap-packages/snap-store/gnome-3-28-1804_116.assert
+#snap install /usr/share/snap-packages/snap-store/gnome-3-28-1804_116.snap
 
-snap ack /usr/share/snap-packages/snap-store/gtk-common-themes_1506.assert
-snap install /usr/share/snap-packages/snap-store/gtk-common-themes_1506.snap
+#snap ack /usr/share/snap-packages/snap-store/gtk-common-themes_1506.assert
+#snap install /usr/share/snap-packages/snap-store/gtk-common-themes_1506.snap
 
-snap ack /usr/share/snap-packages/snap-store/snap-store_415.assert
-snap install /usr/share/snap-packages/snap-store/snap-store_415.snap
+#snap ack /usr/share/snap-packages/snap-store/snap-store_415.assert
+#snap install /usr/share/snap-packages/snap-store/snap-store_415.snap
+
+cp /usr/share/libertyos/unicode.pf2 /boot/grub/fonts/unicode.pf2
 
 rm /var/cache/fontconfig/*
 rm ~/.cache/fontconfig/*
-
-cp /usr/share/libertyos/unicode.pf2 /boot/grub/fonts/unicode.pf2
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
