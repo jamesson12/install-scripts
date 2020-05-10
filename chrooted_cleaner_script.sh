@@ -373,6 +373,11 @@ _clean_up
 
 rm -rf /usr/bin/{calamares_switcher,cleaner_script.sh,chrooted_cleaner_script.sh,calamares_for_testers}
 
+cp /usr/share/libertyos/unicode.pf2 /boot/grub/fonts/unicode.pf2
+
+rm /var/cache/fontconfig/*
+rm ~/.cache/fontconfig/*
+
 #xinit
 #xfce4-session
 
@@ -390,11 +395,6 @@ rm -rf /usr/bin/{calamares_switcher,cleaner_script.sh,chrooted_cleaner_script.sh
 dbus-launch dconf load / < /etc/skel/.dconf/plank.dconf
 sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < /etc/skel/.dconf/plank.dconf'
 
-systemctl enable --now snapd.seeded.service
-systemctl enable --now snapd.socket
-#systemctl daemon-reload
-ln -s /var/lib/snapd/snap /snap
-
 #snap ack /usr/share/snap-packages/snap-store/core18_1754.assert
 #snap install /usr/share/snap-packages/snap-store/core18_1754.snap
 
@@ -407,12 +407,12 @@ ln -s /var/lib/snapd/snap /snap
 #snap ack /usr/share/snap-packages/snap-store/snap-store_415.assert
 #snap install /usr/share/snap-packages/snap-store/snap-store_415.snap
 
-cp /usr/share/libertyos/unicode.pf2 /boot/grub/fonts/unicode.pf2
-
-#rm /var/cache/fontconfig/*
-#rm ~/.cache/fontconfig/*
-
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+systemctl enable --now snapd.seeded.service
+systemctl enable --now snapd.socket
+#systemctl daemon-reload
+ln -s /var/lib/snapd/snap /snap
 
 #export SHELL=/bin/bash
 #COLORTERM=truecolor
