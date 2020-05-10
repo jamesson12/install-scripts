@@ -409,8 +409,8 @@ ln -s /var/lib/snapd/snap /snap
 
 cp /usr/share/libertyos/unicode.pf2 /boot/grub/fonts/unicode.pf2
 
-rm /var/cache/fontconfig/*
-rm ~/.cache/fontconfig/*
+#rm /var/cache/fontconfig/*
+#rm ~/.cache/fontconfig/*
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
