@@ -373,10 +373,8 @@ _clean_up
 
 rm -rf /usr/bin/{calamares_switcher,cleaner_script.sh,chrooted_cleaner_script.sh,calamares_for_testers}
 
+mkdir -p /boot/grub/fonts
 cp /usr/share/libertyos/unicode.pf2 /boot/grub/fonts/unicode.pf2
-
-rm /var/cache/fontconfig/*
-rm ~/.cache/fontconfig/*
 
 #xinit
 #xfce4-session
@@ -413,6 +411,9 @@ systemctl enable --now snapd.seeded.service
 systemctl enable --now snapd.socket
 #systemctl daemon-reload
 ln -s /var/lib/snapd/snap /snap
+
+rm /var/cache/fontconfig/*
+rm ~/.cache/fontconfig/*
 
 #export SHELL=/bin/bash
 #COLORTERM=truecolor
