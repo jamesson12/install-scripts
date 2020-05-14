@@ -412,8 +412,8 @@ systemctl enable --now snapd.socket
 #systemctl daemon-reload
 ln -s /var/lib/snapd/snap /snap
 
-rm /var/cache/fontconfig/*
-rm ~/.cache/fontconfig/*
+#rm /var/cache/fontconfig/*
+#rm ~/.cache/fontconfig/*
 
 #export SHELL=/bin/bash
 #COLORTERM=truecolor
