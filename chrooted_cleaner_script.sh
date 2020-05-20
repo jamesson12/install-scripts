@@ -381,7 +381,7 @@ sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < /etc/skel/.dconf/plank.
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak remote-add --no-gpg-verify --if-not-exists eos-apps https://ostree.endlessm.com/ostree/eos-apps
-#flatpak remote-add --no-gpg-verify --if-not-exists eos-sdk https://ostree.endlessm.com/ostree/eos-sdk
+flatpak remote-add --no-gpg-verify --if-not-exists eos-sdk https://ostree.endlessm.com/ostree/eos-sdk
 flatpak remote-add --if-not-exists kdeapps --from https://distribute.kde.org/kdeapps.flatpakrepo
 
 systemctl enable --now snapd.seeded.service
