@@ -388,8 +388,13 @@ flatpak remote-add --if-not-exists kdeapps --from https://distribute.kde.org/kde
 
 #systemctl enable --now snapd.seeded.service
 systemctl enable --now snapd.socket
+systemctl enable cronie.service
 #systemctl daemon-reload
 ln -s /var/lib/snapd/snap /snap
+
+echo "INSTALL_DATE="$( date '+%F_%H:%M:%S' )>>/etc/environment
+
+crontab /usr/share/libertyos/cron.txt
 
 #rm /var/cache/fontconfig/*
 #rm ~/.cache/fontconfig/*
