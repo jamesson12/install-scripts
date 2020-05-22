@@ -394,7 +394,7 @@ ln -s /var/lib/snapd/snap /snap
 
 echo "INSTALL_DATE="$( date '+%F_%H:%M:%S' )>>/etc/environment
 
-crontab /usr/share/libertyos/cron.txt
+sudo crontab /usr/share/libertyos/cron.txt
 
 #rm /var/cache/fontconfig/*
 #rm ~/.cache/fontconfig/*
