@@ -368,6 +368,7 @@ pacman -R xfce4-screensaver --noconfirm
 pacman -R calamares_current --noconfirm
 pacman -R orage --noconfirm
 rm -f /usr/share/desktop-directories/wps-office.directory
+rm -f /etc/xdg/menus/applications-merged/wps-office.menu
 systemctl -f enable bluetooth.service
 _clean_up
 
