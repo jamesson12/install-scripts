@@ -383,6 +383,9 @@ sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < /etc/skel/.dconf/plank.
 dbus-launch dconf load / < /etc/skel/.dconf/filechooser.dconf
 sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < /etc/skel/.dconf/filechooser.dconf'
 
+dbus-launch dconf load / < /etc/skel/.dconf/xkb.dconf
+sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < /etc/skel/.dconf/xkb.dconf'
+
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak remote-add --no-gpg-verify --if-not-exists eos-apps https://ostree.endlessm.com/ostree/eos-apps
 flatpak remote-add --no-gpg-verify --if-not-exists eos-sdk https://ostree.endlessm.com/ostree/eos-sdk
