@@ -116,7 +116,6 @@ _clean_archiso(){
         /etc/initcpio
         /etc/udev/rules.d/81-dhcpcd.rules
         /usr/bin/{calamares_switcher,cleaner_script.sh}
-        /home/$NEW_USER/.config/qt5ct
         /home/$NEW_USER/{.xinitrc,.xsession,.xprofile}
         /root/{.xinitrc,.xsession,.xprofile}
         /etc/skel/{.xinitrc,.xsession,.xprofile}
