@@ -414,3 +414,6 @@ systemctl enable cronie.service
 
 #rm /var/cache/fontconfig/*
 #rm ~/.cache/fontconfig/*
+
+sudo net -s /dev/null groupmap add sid=S-1-5-32-546 unixgroup=nobody type=builtin
+sudo chmod -R 755 /var/cache/samba
