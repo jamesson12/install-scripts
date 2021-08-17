@@ -396,6 +396,9 @@ sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < /etc/skel/.dconf/gedit.
 dbus-launch dconf load / < /etc/skel/.dconf/nautilus.dconf
 sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < /etc/skel/.dconf/nautilus.dconf'
 
+dbus-launch dconf load / < /etc/skel/.dconf/calendar.dconf
+sudo -H -u $NEW_USER bash -c 'dbus-launch dconf load / < /etc/skel/.dconf/calendar.dconf'
+
 dconf update
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
