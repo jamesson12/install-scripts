@@ -404,6 +404,7 @@ flatpak remote-add --if-not-exists kdeapps --from https://distribute.kde.org/kde
 
 #systemctl enable --now snapd.seeded.service
 systemctl enable --now snapd.socket
+systemctl enable cups
 #systemctl daemon-reload
 ln -s /var/lib/snapd/snap /snap
 
