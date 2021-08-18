@@ -207,6 +207,7 @@ _remove_other_graphics_drivers() {
 }
 
 _add_mkinitcpio_graphics_drivers() {
+    local graphics="$(device-info --vga ; device-info --display)"
     local amd=no
     local amd2=no
     local intel=no
