@@ -415,6 +415,15 @@ systemctl enable cups
 #systemctl daemon-reload
 ln -s /var/lib/snapd/snap /snap
 
+# share
+systemctl enable smb
+systemctl enable nmb
+mkdir /var/lib/samba/usershares
+groupadd -r sambashare
+chown root:sambashare /var/lib/samba/usershares
+chmod 1770 /var/lib/samba/usershares
+gpasswd sambashare -a $NEW_USER
+
 echo "INSTALL_DATE="$( date '+%F_%H:%M:%S' )>>/etc/environment
 
 sudo crontab /usr/share/libertyos/cron.txt
