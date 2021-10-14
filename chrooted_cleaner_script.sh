@@ -424,10 +424,10 @@ chown root:sambashare /var/lib/samba/usershares
 chmod 1770 /var/lib/samba/usershares
 gpasswd sambashare -a $NEW_USER
 
-echo "INSTALL_DATE="$( date '+%F_%H:%M:%S' )>>/etc/environment
+#echo "INSTALL_DATE="$( date '+%F_%H:%M:%S' )>>/etc/environment
 
-sudo crontab /usr/share/libertyos/cron.txt
-systemctl enable cronie.service
+#sudo crontab /usr/share/libertyos/cron.txt
+#systemctl enable cronie.service
 
 #rm /var/cache/fontconfig/*
 #rm ~/.cache/fontconfig/*
