@@ -416,8 +416,8 @@ systemctl enable cups
 ln -s /var/lib/snapd/snap /snap
 
 # share
-systemctl enable smb
-systemctl enable nmb
+#systemctl enable smb
+#systemctl enable nmb
 mkdir /var/lib/samba/usershares
 groupadd -r sambashare
 chown root:sambashare /var/lib/samba/usershares
